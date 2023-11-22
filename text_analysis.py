@@ -21,18 +21,14 @@ def sentence(wordslist):
 	return words
     #Generates a sentence from a list of words, primitive at this level but a good foundation.
 
-print(wordafter("the","The army crossed the river in june."))
-def dist(word, text):
+print(wordafter("the","the army crossed the river in june."))
+def freq(word, text):
+        x = 0
+        text = text.lower()
+        text = text.split()
         if word in text:
-                x = 0
                 for item in text:
-                        if word == text[x]:
-                                fx = x
-                        x += 1
-                text_ln = len(text)
-                dist = text_ln - fx - 1
-                print(dist)
-ilist = ["the","army","crossed","great","raging","river","in","the","month","of","june"]
-dist("the",ilist)
-
-         
+                        if item == word:
+                                x += 1
+        return x/len(text)
+print(freq("the","the army crossed the river in june."))
